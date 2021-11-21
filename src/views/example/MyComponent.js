@@ -13,12 +13,15 @@ class Mycomponent extends React.Component {
     */
     
     handleOnChangeName = (event) => {
+        // merge 
         this.setState({ 
             name: event.target.value
         });
     }
 
-
+    handleClickButton = () => {
+        alert('click me')
+    }
 
     render() {
 
@@ -33,6 +36,9 @@ class Mycomponent extends React.Component {
             </div>
             <div className= 'second'>
                 My channel : {this.state.channel}
+            </div>
+            <div className= 'third'>
+                <button onClick={() => this.handleClickButton() }>Click me</button> 
             </div>
             </>
         )
