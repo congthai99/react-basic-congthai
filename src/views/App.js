@@ -15,14 +15,7 @@ function App() {
         <p>
           Hello world with Reactjs and Cong thai
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
         <Mycomponent/>
       </header>
     </div>
