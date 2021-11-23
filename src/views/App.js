@@ -2,7 +2,8 @@ import logo from './logo.svg';
 import './App.scss';
 import Mycomponent from './example/MyComponent';
 /**
- * 2 components : class component / function component (function, arrow)
+ * 2 components : class component     / function component (function, arrow)
+ * >>>>>>>>>>>>>: statefull component / stateless component
  * JSX
 */
 
