@@ -2,35 +2,25 @@ import React from 'react';
 
 class Childcomponent extends React.Component {
     
-    // state is a object 
-    state = {
-       firstName: '',
-       lastName: '',
-    }
-
-    /** 
-      JSX => return block 
-    */
-    handleChangeFirstName = (event) => {
-        this.setState({
-            firstName: event.target.value
-        });
-    }
-    handleChangeLastName = (event) => {
-        this.setState({
-            lastName: event.target.value
-        });
-    }
-    handleSubmit = (event) => {
-        event.preventDefault()
-        console.log(this.state)
-    }
+    // re-render
     render() {
-        console.log('>>> call render: ', this.state)
+        console.log('>>> check props: ', this.props)
+        // let name = this.props.name 
+        let {arrJobs} = this.props;
+
         return (
             <>
-                <div>
-                    Childcomponent : {this.props.name}
+                <div className="job-lists">
+                    {
+                        arrJobs.map((item,index) => {
+                            return (
+                                <div key={item.id}>
+                                    {item.title} - {item.salary}
+                                </div>
+                            )
+                        })
+                    }
+
                 </div>
             </>
         )
