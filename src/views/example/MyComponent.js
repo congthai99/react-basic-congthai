@@ -13,12 +13,28 @@ class Mycomponent extends React.Component {
        ]
     }
 
+    
     addNewJob = (job) => {
         console.log('check job from parent:', job)
+        // let currenJobs = this.state.arrJobs;
+        // currenJobs.push(job)
+        
         this.setState({
             arrJobs: [...this.state.arrJobs, job]
+            // arrJobs: currenJobs
         })
     }
+
+    deleteAJob = (job) => {
+        let currenJobs = this.state.arrJobs
+        let newcurrenJobs = currenJobs.filter(item => item.id !== job.id)
+        
+        this.setState({
+            arrJobs: newcurrenJobs
+        })
+        console.log('>>>>>>> job.id check:',job.id,newcurrenJobs)
+    }
+
 
     /** 
       JSX => return block 
@@ -35,6 +51,7 @@ class Mycomponent extends React.Component {
                 
                 <Childcomponent 
                 arrJobs={this.state.arrJobs}
+                deleteAJob={this.deleteAJob}
                 />
                 
             </>
