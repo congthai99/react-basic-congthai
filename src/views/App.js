@@ -4,6 +4,18 @@ import Mycomponent from './example/MyComponent';
 import ListTodo from './Todos/ListTodo';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ListUser from './Users/ListUser'
+
+
+import Home from './example/Home'
+import Nav from './Nav/Nav'
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 /**
  * 2 components : class component     / function component (function, arrow)
  * >>>>>>>>>>>>>: statefull component / stateless component
@@ -13,15 +25,27 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
+      <div className="App">
       <header className="App-header">
+        <Nav/>
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Simple Todo apps with Reactjs and Cong thai
-        </p>
 
-        {/* <Mycomponent/> */}
-        <ListTodo />
+        <Switch>
+          <Route path="/" exact>
+            <Home/>
+          </Route>
+          <Route path="/todo">
+            <ListTodo />
+          </Route>
+          <Route path="/about">
+            <Mycomponent/>
+          </Route>
+          <Route path="/user">
+            <ListUser/>
+          </Route>
+        </Switch>
+        
       </header>
 
       <ToastContainer
@@ -37,7 +61,8 @@ function App() {
       />
       {/* Same as */}
       <ToastContainer />
-    </div>
+      </div>
+    </BrowserRouter>
   );
 }
 

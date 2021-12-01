@@ -80,6 +80,10 @@ class ListTodo extends React.Component {
         let isEmptyObj = Object.keys(editTodo).length === 0;
         console.log('>>> check empty obj:', isEmptyObj)
         return (
+            <>
+            <p>
+          Simple Todo apps with Reactjs and Cong thai
+            </p>
             <div className="list-todo-container">
                 <AddTodo
                     addNewTodo ={this.addNewTodo}
@@ -124,6 +128,8 @@ class ListTodo extends React.Component {
                     
                 </div>
             </div>
+
+            </>
         )
     }
 }
