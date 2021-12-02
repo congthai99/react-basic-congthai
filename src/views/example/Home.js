@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from "react-router";
 import Color from "../HOC/Color";
+import Logo from "../../assets/images/logoApple.png";
 
 
 // HOC : higher order component 
@@ -14,9 +15,15 @@ class Home extends React.Component {
 
     render() {
         return(
-            <div>
-                Hello world from Homepage with Cong Thai
-            </div>
+            <>
+                <div>
+                    Hello world from Homepage with Cong Thai
+                </div>
+
+                <div>
+                    <img style={{width: '400px'}}src={Logo}/>
+                </div>
+            </>
         )
     }
 }
