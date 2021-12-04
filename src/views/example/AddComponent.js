@@ -25,7 +25,7 @@ class Addcomponent extends React.Component {
         }
         console.log('>>> check data input: ',this.state)
         this.props.addNewJob({
-            id: Math.random(),
+            id: Math.floor(Math.random() *1001),
             title: this.state.title,
             salary: this.state.salary
         })
